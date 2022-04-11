@@ -5,8 +5,8 @@ bool isIdle = true;
 
 void function IdleMapChangeInit()
 {
-	AddCallback_OnClientConnected(IdleMapChange_ClientConnected)
-	AddCallback_OnClientDisconnected(IdleMapChange_ClientDisconnected)
+	AddCallback_OnClientConnected(IdleMapChange_ClientConnected);
+	AddCallback_OnClientDisconnected(IdleMapChange_ClientDisconnected);
 
 	idleWaitTime = float(GetConVarInt("idle_map_change_time"));
 	idleWaitInterval = float(GetConVarInt("idle_map_change_interval"));
