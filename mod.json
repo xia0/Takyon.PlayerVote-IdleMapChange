@@ -8,6 +8,10 @@
 		{
 			"Name": "idle_map_change_time",
 			"DefaultValue": "600"
+		},
+		{
+			"Name": "idle_map_change_interval",
+			"DefaultValue": "60"
 		}
 	],
 	"Scripts": [
