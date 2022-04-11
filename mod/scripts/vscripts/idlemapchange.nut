@@ -33,6 +33,7 @@ void function IdleMapChange_ClientConnected(entity player) {
 void function IdleMapChange_ClientDisconnected(entity player) {
 	if (GetPlayerArray().len() - 1 <= 0) {
 		isIdle = true;
+		idleWaitTime += Time(); // Reset timer
 		thread IdleMapChangeTimer();
 	}
 }
