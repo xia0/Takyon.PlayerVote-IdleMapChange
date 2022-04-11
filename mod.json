@@ -1,9 +1,8 @@
 {
 	"Name" : "Takyon.PlayerVote-IdleMapChange",
 	"Description" : "Change map after a time of inactivity. Requires Takyon.PlayerVote mod.",
-	"Version": "1",
+	"Version": "1.0",
 	"LoadPriority": 1,
-
 	"ConVars": [
 		{
 			"Name": "idle_map_change_time",

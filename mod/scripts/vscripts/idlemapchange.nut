@@ -1,6 +1,7 @@
 global function IdleMapChangeInit
 
 float idleWaitTime;
+float idleWaitInterval;
 bool isIdle = true;
 
 void function IdleMapChangeInit()
@@ -8,8 +9,8 @@ void function IdleMapChangeInit()
 	AddCallback_OnClientConnected(IdleMapChange_ClientConnected);
 	AddCallback_OnClientDisconnected(IdleMapChange_ClientDisconnected);
 
-	idleWaitTime = float(GetConVarInt("idle_map_change_time"));
-	idleWaitInterval = float(GetConVarInt("idle_map_change_interval"));
+	idleWaitTime = GetConVarFloat("idle_map_change_time");
+	idleWaitInterval = GetConVarFloat("idle_map_change_interval");
 	thread IdleMapChangeTimer();
 }
 
