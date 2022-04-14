@@ -22,7 +22,10 @@ void function IdleMapChangeTimer()
 			isIdle = false;
 			PostmatchMap();
 		}
-		printl(GetMapName() + " " + GameRules_GetGameMode() + " " + (idleWaitTime - Time()) + " seconds until map change");
+		else {
+			printl(format("Idle on %s %s - %i:%i until map change", GetMapName(), GameRules_GetGameMode(), (idleWaitTime - Time())/60, (idleWaitTime - Time())%60));
+		}
+
 		wait idleWaitInterval;
 	}
 }
