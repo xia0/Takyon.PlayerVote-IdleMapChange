@@ -38,7 +38,7 @@ void function IdleMapChange_ClientDisconnected(entity player) {
 	// Start the timer again if there are no more players
 	if (GetPlayerArray().len() - 1 <= 0) {
 		isIdle = true;
-		idleWaitTime += Time(); // Reset timer
+		idleWaitTime = GetConVarFloat("idle_map_change_time") + Time(); // Reset timer
 		thread IdleMapChangeTimer();
 	}
 }
