@@ -18,6 +18,7 @@ void function IdleMapChangeInit()
 void function IdleMapChangeTimer()
 {
 	while (isIdle) {
+		wait idleWaitInterval;
 		if (Time() > idleWaitTime) {
 			isIdle = false;
 			PostmatchMap();
@@ -25,8 +26,6 @@ void function IdleMapChangeTimer()
 		else {
 			printl(format("Idle on %s %s - %i:%i until map change", GetMapName(), GameRules_GetGameMode(), (idleWaitTime - Time())/60, (idleWaitTime - Time())%60));
 		}
-
-		wait idleWaitInterval;
 	}
 }
 
